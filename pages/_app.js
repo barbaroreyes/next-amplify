@@ -1,7 +1,10 @@
-import '../styles/globals.css';
- import Amplify  from 'aws-amplify';;
- import configure from '../aws-exports.js'
- Amplify.configure(configure)
+import '../styles/globals.css'
+
+import Amplify from 'aws-amplify';
+import config from '../aws-exports';
+Amplify.configure({
+  ...config, ssr: true
+});
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
